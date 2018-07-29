@@ -1,0 +1,90 @@
+<html>
+ 
+<head>
+ 
+    <title>Registration Form</title>
+ 
+    <script type="text/javascript">
+        function validate_form() {
+            if (document.emp.fn_name.value == "") {
+                alert("Please fill in the 'Your first Name' box.");
+                return false;
+            }
+             if (document.emp.ln_name.value == "") {
+                alert("Please fill in the 'Your last Name' box.");
+                return false;
+            }
+
+           
+            alert("sucessfully Submitted");
+ 
+ 
+ 
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.emp.email_id.value)) {
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+        }
+ 
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57)) {
+                alert("Enter Number");
+                return false;
+            }
+            return true;
+        }
+ 
+        //-->
+    </script>
+ 
+</head>
+ 
+<body bgcolor="#FFFFFF">
+    <form name="emp" action="" onsubmit="return validate_form();" method="post">
+        <table align="center" width=40% width="100%" cellspacing="2" cellpadding="2" border="5">
+            <tr>
+                <td colspan="2" align="center"><b>Registration Form.</b></td>
+ 
+            </tr>
+            <tr>
+                <td align="left" valign="top" width="41%">First Name<span style="color:red">*</span></td>
+ 
+                <td width="57%"><input type="text" value="" name="fn_name" size="24"></td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" width="41%">Last Name<span style="color:red">*</span></td>
+ 
+                <td width="57%"><input type="text" value="" name="ln_name" size="24"></td>
+            </tr>
+            
+            <tr>
+ 
+            <td align="left" valign="top" width="41%">Phone Number</td>
+            <td width="57%">
+                <input type="text" value="" onkeypress="return isNumberKey(event)" name="txtFName1" size="24"></td>
+            </tr>
+           
+            <tr>
+                <td align="left" valign="top" width="41%">Email<span style="color:red">*</span></td>
+                <td width="57%">
+                    <input type="text" value="" name="email_id" size="24"></td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" width="41%" for="psw">Password</td>
+               <td width="57%">
+             <input type="password" id="psw"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 15 or more characters" required></td>
+              </tr>
+            <tr>
+                <td colspan="2">
+                    <p align="center">
+                        <input type="submit" value="  Submit" name="B4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="  Reset All   " name="B5"></td>
+            </tr>
+ 
+        </table>
+    </form>
+</body>
+ 
+</html>
